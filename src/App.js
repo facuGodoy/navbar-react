@@ -1,10 +1,14 @@
-import './App.css';
-import NavBar from './Components/NavBar.jsx';
+import "./App.css";
+import ItemListContainer from "./Components/ItemListContainer";
+import NavBar from "./Components/NavBar.jsx";
 
 function App() {
+  const greeting = "Hola, Bienvenidos a la App de mi E-Commerc..!";
+
   return (
     <>
-      <NavBar/>
+      <NavBar />
+      <ItemListContainer greeting={greeting} />
     </>
   );
 }
