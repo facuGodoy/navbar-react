@@ -1,4 +1,5 @@
 import "./App.css";
+import ItemCount from "./Components/ItemCount";
 import ItemListContainer from "./Components/ItemListContainer";
 import NavBar from "./Components/NavBar.jsx";
 
@@ -9,6 +10,8 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer greeting={greeting} />
+      <hr />
+      
     </>
   );
 }

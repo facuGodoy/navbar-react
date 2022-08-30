@@ -110,7 +110,6 @@ export default function NavBar() {
             ))}
           </Box>
           <CartWidget />
-          <ItemListContainer />
 
           <Box sx={{ flexGrow: 0 }}></Box>
         </Toolbar>
