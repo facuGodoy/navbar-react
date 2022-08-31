@@ -14,11 +14,13 @@ export default function ItemList() {
     rej("Por el momento no hay Stock disponible");
   });
 
-  // producto.then(resultado => {
+  producto.then(resultado => {
+    console.log(resultado);
+  })
 
   return (
     <>
-      <h1>ItemList</h1>
+      
     </>
   );
 }

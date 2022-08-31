@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
+import { Button } from "@mui/material";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
 
 export default function ItemCount({ stock, titulo, inicial, onAdd }) {
-
   const [contador, setContador] = useState(inicial);
 
   const sumar = () => {
@@ -22,15 +22,21 @@ export default function ItemCount({ stock, titulo, inicial, onAdd }) {
         <div>
           <h2>Contador de {titulo}</h2>
         </div>
-        <section style={{ margin: '.5rem' }}>
-          <Button onClick={restar}>-</Button>
+        <section style={{ margin: ".5rem" }}>
+          <Button variant="outlined" onClick={restar}>
+            -
+          </Button>
           <span style={{ marginLeft: "1rem", marginRight: "1rem" }}>
             {contador}
           </span>
-          <Button onClick={sumar}>+</Button>
+          <Button variant="outlined" onClick={sumar}>
+            +
+          </Button>
         </section>
         <div>
           <Button
+            endIcon={<LocalMallIcon />}
+            variant="contained"
             onClick={() => {
               onAdd(contador);
               setContador(inicial);
@@ -39,8 +45,7 @@ export default function ItemCount({ stock, titulo, inicial, onAdd }) {
             Agregar al carrito
           </Button>
         </div>
-        </div>
-        
+      </div>
     </>
   );
 }
@@ -48,5 +53,3 @@ export default function ItemCount({ stock, titulo, inicial, onAdd }) {
 ItemCount.defaultProps = {
   titulo: "Clicks",
 };
-
-
