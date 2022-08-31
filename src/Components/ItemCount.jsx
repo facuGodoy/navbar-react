@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "@mui/material/Button";
 
 export default function ItemCount({ stock, titulo, inicial, onAdd }) {
 
@@ -22,23 +23,24 @@ export default function ItemCount({ stock, titulo, inicial, onAdd }) {
           <h2>Contador de {titulo}</h2>
         </div>
         <section style={{ margin: '.5rem' }}>
-          <button onClick={restar}>-</button>
+          <Button onClick={restar}>-</Button>
           <span style={{ marginLeft: "1rem", marginRight: "1rem" }}>
             {contador}
           </span>
-          <button onClick={sumar}>+</button>
+          <Button onClick={sumar}>+</Button>
         </section>
         <div>
-          <button
+          <Button
             onClick={() => {
               onAdd(contador);
               setContador(inicial);
             }}
           >
             Agregar al carrito
-          </button>
+          </Button>
         </div>
-      </div>
+        </div>
+        
     </>
   );
 }
@@ -46,3 +48,5 @@ export default function ItemCount({ stock, titulo, inicial, onAdd }) {
 ItemCount.defaultProps = {
   titulo: "Clicks",
 };
+
+
