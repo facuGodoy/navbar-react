@@ -7,7 +7,7 @@ import { CardMedia } from "@mui/material";
 import { Typography } from "@mui/material";
 import ItemCount from "../ItemCount";
 
-export default function Item({producto}) {
+export default function Item({ producto }) {
   return (
     <>
       <Card sx={{ maxWidth: 345, height: 720, align: "center" }}>
