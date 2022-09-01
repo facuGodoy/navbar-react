@@ -1,20 +1,33 @@
-import React from "react";
-import ItemCount from "./ItemCount";
+import React, { useState, useEffect } from "react";
+import { FetchData } from "./helper/FetchData";
+import ItemList from "./ItemList";
+import productos from "./helper/Producto";
+import "./helper/styles/ItemListContainer.css";
+// import ItemCount from "./ItemCount";
 
 export default function ItemListContainer({ greeting, titulo }) {
+  const [listProducts, setListProducts] = useState([]);
+
   const stock = 10;
   const inicial = 1;
+
+  useEffect(() => {
+    FetchData(productos)
+      .then((data) => setListProducts(data));
+  }, []);
+
+  console.log(listProducts);
 
   const onAdd = (resultado) => {
     alert(`Agregaste ${resultado} unidades`);
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "1.5 rem" }}>
-      <h2>{greeting}</h2>
-      <h3>{titulo}</h3>
+    <div className="contenedorItems" style={{ textAlign: "center", padding: "1.5 rem" }}>
+      <h1>{greeting}</h1>
+      <h2>{titulo}</h2>
 
-      <ItemCount stock={stock} inicial={inicial} onAdd={onAdd} />
+      <ItemList listProducts={listProducts} stock={stock} inicial={inicial} onAdd={onAdd} />
     </div>
   );
 }
