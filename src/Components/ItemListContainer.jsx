@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FetchData } from "./helper/FetchData";
 import ItemList from "./ItemList";
 import productos from "./helper/Producto";
-import "./helper/styles/ItemListContainer.css";
+import "./styles/ItemListContainer.css";
 // import ItemCount from "./ItemCount";
 
 export default function ItemListContainer({ greeting, titulo }) {

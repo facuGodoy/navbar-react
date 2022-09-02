@@ -1,5 +1,5 @@
 import Item from "./helper/Item";
-import "./helper/styles/ItemList.css";
+import "./styles/ItemList.css";
 
 export default function ItemList({ listProducts }) {
   // const producto = new Promise((res, rej) => {

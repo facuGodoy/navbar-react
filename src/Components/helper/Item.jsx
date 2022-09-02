@@ -9,12 +9,13 @@ import ItemCount from "../ItemCount";
 
 export default function Item({ producto }) {
   return (
-    <Card sx={{ maxWidth: 345, height: 720, align: "center" }}>
+    <Card sx={{ maxWidth: 345, padding:".5rem", margin: "1rem" }}>
       <CardMedia
         component="img"
         height="400"
-        img={producto.img}
-        alt={producto.title}
+        width="600"
+        image={producto.img}
+        alt={producto.nombre}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
