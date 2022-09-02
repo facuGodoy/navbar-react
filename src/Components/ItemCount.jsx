@@ -2,26 +2,27 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 
-export default function ItemCount({ stock, titulo, inicial, onAdd }) {
-  const [contador, setContador] = useState(inicial);
+export default function ItemCount() {
+  const [contador, setContador] = useState(1);
 
   const sumar = () => {
-    if (contador < stock) {
+    if (contador < 10) {
       setContador(contador + 1);
     }
   };
   const restar = () => {
-    if (contador > 0) {
+    if (contador > 1) {
       setContador(contador - 1);
     }
+  };
+
+  const onAdd = () => { 
+    alert(`Agregaste ${contador} unidades`);
   };
 
   return (
     <>
       <div style={{ textAlign: "center" }}>
-        <div>
-          <h2>Contador de {titulo}</h2>
-        </div>
         <section style={{ margin: ".5rem" }}>
           <Button
             variant="outlined"
@@ -49,8 +50,9 @@ export default function ItemCount({ stock, titulo, inicial, onAdd }) {
             variant="contained"
             size="medium"
             onClick={() => {
-              onAdd(contador);
-              setContador(inicial);
+              if (contador > 0) { 
+                onAdd();
+              };
             }}
           >
             Agregar al carrito

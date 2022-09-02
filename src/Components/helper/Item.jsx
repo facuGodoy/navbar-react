@@ -9,27 +9,25 @@ import ItemCount from "../ItemCount";
 
 export default function Item({ producto }) {
   return (
-    <>
-      <Card sx={{ maxWidth: 345, height: 720, align: "center" }}>
-        <CardMedia
-          component="img"
-          height="400"
-          image={producto.img}
-          alt={producto.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {producto.titulo}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {producto.detalle}
-          </Typography>
-          <Typography variant="body3">Precio: $ {producto.precio}</Typography>
-        </CardContent>
-        <CardActions>
-          <ItemCount />
-        </CardActions>
-      </Card>
-    </>
+    <Card sx={{ maxWidth: 345, height: 720, align: "center" }}>
+      <CardMedia
+        component="img"
+        height="400"
+        img={producto.img}
+        alt={producto.title}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {producto.nombre}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {producto.detalle}
+        </Typography>
+        <Typography variant="body3">Precio: $ {producto.precio}</Typography>
+      </CardContent>
+      <CardActions>
+        <ItemCount />
+      </CardActions>
+    </Card>
   );
 }
