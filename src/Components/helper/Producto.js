@@ -5,7 +5,7 @@ const productos = [
     precio: 500,
     categoria: "tortas",
     detalle: "Cheesecake de queso crema con frutos rojos",
-    img: "src/img/rojos.jpg",
+    img: "./img/rojos.jpg",
   },
   {
     id: "02",
@@ -83,4 +83,13 @@ const productos = [
   },
 ];
 
-export default productos;
+export const data = new Promise((res, rej) => {
+  let condition = true;
+  setTimeout(() => {
+    if (condition) {
+      res(productos);
+    } else {
+      rej("Error");
+    }
+  }, 3000);
+});

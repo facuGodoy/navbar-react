@@ -1,4 +1,4 @@
-import Item from "./helper/Item";
+import Item from "./Item";
 import "./styles/ItemList.css";
 
 export default function ItemList({ listProducts }) {

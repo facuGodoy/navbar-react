@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { FetchData } from "./helper/FetchData";
+// import { FetchData } from "./helper/FetchData";
 import ItemList from "./ItemList";
-import productos from "./helper/Producto";
+import { data } from "./helper/Producto.js";
 import "./styles/ItemListContainer.css";
 // import ItemCount from "./ItemCount";
 
 export default function ItemListContainer({ greeting, titulo }) {
   const [listProducts, setListProducts] = useState([]);
-
-  const stock = 10;
-  const inicial = 1;
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    FetchData(productos)
-      .then((data) => setListProducts(data));
+    data
+      .then((res) => setListProducts(res))
+      .catch((err) => console.log(err));
   }, []);
 
   console.log(listProducts);
@@ -23,11 +22,17 @@ export default function ItemListContainer({ greeting, titulo }) {
   };
 
   return (
-    <div className="contenedorItems" style={{ textAlign: "center", padding: "1.5 rem" }}>
+    <div
+      className="contenedorItems"
+      style={{ textAlign: "center", padding: "1.5 rem" }}
+    >
       <h1>{greeting}</h1>
       <h2>{titulo}</h2>
 
-      <ItemList listProducts={listProducts} stock={stock} inicial={inicial} onAdd={onAdd} />
+      <ItemList
+        listProducts={listProducts}
+        onAdd={onAdd}
+      />
     </div>
   );
 }
