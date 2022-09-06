@@ -21,7 +21,7 @@ const productos = [
     precio: 350,
     categoria: "tortas",
     detalle: "Torta de hojaldre con dulce de leche/batata/membrillo",
-    img: "src/Components/helper/img/frola.jpg",
+    img: "./img/frola.jpg",
   },
   {
     id: "04",
@@ -29,7 +29,7 @@ const productos = [
     precio: 300,
     categoria: "tortas",
     detalle: "Bizcochuelo saborizado con naranja",
-    img: "src/Components/helper/img/naranja.jpg",
+    img: "./img/naranja.jpg",
   },
   {
     id: "05",
@@ -37,7 +37,7 @@ const productos = [
     precio: 500,
     categoria: "tortas",
     detalle: "Tostada de pan pasado por leche y huevo, cocinado en sartén",
-    img: "src/Components/helper/img/francesa.jpg",
+    img: "./img/francesa.jpg",
   },
   {
     id: "06",
@@ -45,7 +45,7 @@ const productos = [
     precio: 600,
     categoria: "tortas",
     detalle: "Waffles de harina de trigo, con azúcar y canela",
-    img: "src/Components/helper/img/waffle.jpg",
+    img: "./img/waffle.jpg",
   },
   {
     id: "07",
@@ -54,7 +54,7 @@ const productos = [
     categoria: "tortas",
     detalle:
       "Pancakes de harina y azucar, acompañado de frutos rojos, chocolate o miel",
-    img: "src/Components/helper/img/pancake.jpg",
+    img: "./img/pancake.jpg",
   },
   {
     id: "001",
@@ -62,7 +62,7 @@ const productos = [
     precio: 450,
     categoria: "bebidas",
     detalle: "Cafe acompañado de leche y espuma de leche",
-    img: "src/Components/helper/img/capuccino.jpg",
+    img: "./img/capuccino.jpg",
   },
   {
     id: "002",
@@ -71,7 +71,7 @@ const productos = [
     " categoria": "bebidas",
     detalle:
       "Cafe espresso con leche, terminado con una fina capa de espima de leche",
-    img: "src/Components/helper/img/latte.jpg",
+    img: "./img/latte.jpg",
   },
   {
     id: "003",
@@ -79,7 +79,7 @@ const productos = [
     precio: 300,
     categoria: "bebidas",
     detalle: "infucion a base de hirbas",
-    img: "src/Components/helper/img/te.jpg",
+    img: "./img/te.jpg",
   },
 ];
 

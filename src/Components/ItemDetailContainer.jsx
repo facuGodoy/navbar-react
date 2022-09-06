@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { data } from "./helper/Producto.js";
 import ItemDetail from "./ItemDetail";
+import Loader from "./helper/Loader.js";
 
 export default function ItemDetailContainer() {
   const [detalle, setDetalle] = useState({});
@@ -18,12 +19,7 @@ export default function ItemDetailContainer() {
   return (
     <div>
       {loading ? (
-        <div className="lds-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <Loader/>
       ) : (
         <ItemDetail producto={detalle} />
       )}
