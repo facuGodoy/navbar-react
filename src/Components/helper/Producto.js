@@ -76,7 +76,7 @@ const productos = [
     id: 9,
     nombre: "Latte",
     precio: 450,
-    " categoria": "bebidas",
+    categoria: "bebidas",
     detalle:
       "Cafe espresso con leche, terminado con una fina capa de espima de leche",
     img: "./img/latte.jpg",

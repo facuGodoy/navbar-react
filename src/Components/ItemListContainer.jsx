@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Loader from "./helper/Loader";
 // import { FetchData } from "./helper/FetchData";
 import ItemList from "./ItemList";
@@ -9,16 +10,21 @@ import "./styles/ItemListContainer.css";
 export default function ItemListContainer({ greeting, titulo }) {
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { categoriaId } = useParams();
 
   useEffect(() => {
     setLoading(true);
     data
-      .then((res) => setListProducts(res))
+      .then((res) => {
+        if (categoriaId) {
+          setListProducts(res.filter((item) => item.categoria === categoriaId));
+        } else {
+          setListProducts(res);
+        }
+      })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, []);
-
-  console.log(listProducts);
+  }, [ categoriaId ]);
 
   const onAdd = (resultado) => {
     alert(`Agregaste ${resultado} unidades`);

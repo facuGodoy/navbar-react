@@ -14,11 +14,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
+          <Route path="/categoria/:categoriaId" element={<ItemDetailContainer />} />
           <Route
-            path="/detalle/:id"
-            element={<ItemDetailContainer />}
+            path="/item/:id"
+            element={<ItemDetailContainer saludo={saludo} />}
           />
-          <Route path="/item/:id" element={<ItemDetailContainer saludo={saludo} />} />
         </Routes>
       </BrowserRouter>
     </>
