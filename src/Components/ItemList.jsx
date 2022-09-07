@@ -1,30 +1,14 @@
+import React from "react";
 import Item from "./Item";
 import "./styles/ItemList.css";
 
-export default function ItemList({ listProducts }) {
-  // const producto = new Promise((res, rej) => {
-  //   setTimeout(() => {
-  //     res([
-  //       {
-  //         nombre: "Producto 1",
-  //         precio: 100,
-  //         stock: 10,
-  //       },
-  //     ]);
-  //   }, 2000);
-  //   rej("Por el momento no hay Stock disponible");
-  // });
-
-  // producto.then((resultado) => {
-  //   console.log(resultado);
-  // });
-
+export default function ItemList({ productList }) {
   return (
     <>
       <div className="cardContainer">
-        {listProducts.map((producto) => {
-          return <Item key={producto.id} producto={producto} />;
-        })}
+        {productList.map((product) => (
+          <Item key={product.id} product={product} />
+        ))}
       </div>
     </>
   );

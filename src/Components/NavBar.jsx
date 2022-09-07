@@ -11,7 +11,9 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "./CartWidget";
+import { IndeterminateCheckBoxOutlined} from "@mui/icons-material";
 // import ItemListContainer from "./ItemListContainer";
+
 
 const pages = ["Bebidas", "Tortas", "Mas vendidos"];
 
@@ -30,7 +32,7 @@ export default function NavBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <NavLink to='/'>
+          {/* <NavLink to='/'> */}
             <Typography
               variant="h6"
               noWrap
@@ -46,7 +48,7 @@ export default function NavBar() {
             >
               E-Commerce
             </Typography>
-          </NavLink>
+          {/* </NavLink> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton

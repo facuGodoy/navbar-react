@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 // import ItemCount from "./ItemCount";
 
-export default function Item({ producto }) {
-  const { nombre, descripcion, precio, img, id, stock } = producto;
-  const navegar = useNavigate();
+export default function Item({ product }) {
+  const { name, description, price, img, id, stock } = product;
+  const navigate = useNavigate();
   
   return (
     <Card sx={{ maxWidth: 345, height: 600, padding: ".5rem", margin: "1rem" }}>
@@ -21,16 +21,16 @@ export default function Item({ producto }) {
           height="400"
           width="600"
           image={img}
-          alt={nombre}
+          alt={name}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {nombre}
+            {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {descripcion}
+            {description}
           </Typography>
-          <Typography variant="body3">Precio: $ {precio}</Typography>
+          <Typography variant="body3">Precio: $ {price}</Typography>
           <Typography variant="body3"> Stock:  {stock}</Typography>
         </CardContent>
       </CardActionArea>
@@ -42,7 +42,7 @@ export default function Item({ producto }) {
         }}
       >
         {/* <ItemCount stock={producto.stock} initial={1} onAdd={ onAdd} /> */}
-        <Button endIcon={<SearchIcon variant="icons" />} color="success" variant="contained" onClick={() => navegar(`/detalle/${id}`)}>
+        <Button endIcon={<SearchIcon variant="icons" />} color="success" variant="contained" onClick={() => navigate(`/detail/${id}`)}>
           Ver mas 
         </Button>
       </CardActions>

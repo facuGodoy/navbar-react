@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Loader from "./helper/Loader";
-// import { FetchData } from "./helper/FetchData";
 import ItemList from "./ItemList";
 import { data } from "./helper/Producto.js";
+import { useParams } from "react-router-dom";
+import Loader from "./helper/Loader";
 import "./styles/ItemListContainer.css";
+// import { FetchData } from "./helper/FetchData";
 // import ItemCount from "./ItemCount";
 
-export default function ItemListContainer({ greeting, titulo }) {
-  const [listProducts, setListProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { categoriaId } = useParams();
+export default function ItemListContainer({ greeting, saludo }) {
+  const [productList, setProductList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { categoryId } = useParams();
 
   useEffect(() => {
     setLoading(true);
     data
       .then((res) => {
-        if (categoriaId) {
-          setListProducts(res.filter((item) => item.categoria === categoriaId));
+        if (categoryId) {
+          setProductList(res.filter((item) => item.category === categoryId));
         } else {
-          setListProducts(res);
+          setProductList(res);
         }
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, [ categoriaId ]);
+  }, [ categoryId ]);
 
-  const onAdd = (resultado) => {
-    alert(`Agregaste ${resultado} unidades`);
-  };
+  // const onAdd = (resultado) => {
+  //   alert(`Agregaste ${resultado} unidades`);
+  // };
 
   return (
     <div
@@ -36,12 +36,12 @@ export default function ItemListContainer({ greeting, titulo }) {
       style={{ textAlign: "center", padding: "1.5 rem" }}
     >
       <h1>{greeting}</h1>
-      <h2>{titulo}</h2>
+      <h2>{saludo}</h2>
 
       {loading ? (
         <Loader />
       ) : (
-        <ItemList listProducts={listProducts} onAdd={onAdd} />
+        <ItemList productList={productList} />
       )}
     </div>
   );

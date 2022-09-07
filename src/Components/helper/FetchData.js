@@ -1,8 +1,8 @@
 
-export const FetchData= (products) => {
+export const FetchData= (productos) => {
   return new Promise((res, rej) => { 
     setTimeout(() => {
-      res(products)
+      res(productos)
     }, 2000)
   })
 }

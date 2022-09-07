@@ -3,16 +3,16 @@ import { Button } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 
 export default function ItemCount({ stock, initial, onAdd }) {
-  const [contador, setContador] = useState(initial);
+  const [count, setCount] = useState(initial);
 
-  const sumar = () => {
-    if (contador < stock) {
-      setContador(contador + 1);
+  const increment = () => {
+    if (count < stock) {
+      setCount(count + 1);
     }
   };
-  const restar = () => {
-    if (contador > initial) {
-      setContador(contador - 1);
+  const decrement= () => {
+    if (count > initial) {
+      setCount(count - 1);
     }
   };
 
@@ -21,18 +21,18 @@ export default function ItemCount({ stock, initial, onAdd }) {
       <section style={{ margin: ".5rem" }}>
         <Button
           variant="contained"
-          onClick={restar}
+          onClick={decrement}
           size="small"
           style={{ marginLeft: "1rem", marginRight: "1rem" }}
         >
           -
         </Button>
         <span style={{ marginLeft: "1rem", marginRight: "1rem" }}>
-          {contador}
+          {count}
         </span>
         <Button
           variant="contained"
-          onClick={sumar}
+          onClick={increment}
           size="small"
           style={{ marginLeft: "1rem", marginRight: "1rem" }}
         >
