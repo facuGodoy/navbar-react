@@ -6,14 +6,15 @@ import { CardMedia } from "@mui/material";
 import { Button, CardActionArea } from "@mui/material";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
 // import ItemCount from "./ItemCount";
 
 export default function Item({ producto }) {
   const { nombre, descripcion, precio, img, id, stock } = producto;
-  const navigate = useNavigate();
+  const navegar = useNavigate();
   
   return (
-    <Card sx={{ maxWidth: 345, padding: ".5rem", margin: "1rem" }}>
+    <Card sx={{ maxWidth: 345, height: 600, padding: ".5rem", margin: "1rem" }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -30,7 +31,7 @@ export default function Item({ producto }) {
             {descripcion}
           </Typography>
           <Typography variant="body3">Precio: $ {precio}</Typography>
-          <Typography variant="body3"> Stock: $ {stock}</Typography>
+          <Typography variant="body3"> Stock:  {stock}</Typography>
         </CardContent>
       </CardActionArea>
       <CardActions
@@ -41,8 +42,8 @@ export default function Item({ producto }) {
         }}
       >
         {/* <ItemCount stock={producto.stock} initial={1} onAdd={ onAdd} /> */}
-        <Button color="success" variant="contained" onClick={() => navigate(`/detalle/${id}`)}>
-          Ver mas
+        <Button endIcon={<SearchIcon variant="icons" />} color="success" variant="contained" onClick={() => navegar(`/detalle/${id}`)}>
+          Ver mas 
         </Button>
       </CardActions>
     </Card>

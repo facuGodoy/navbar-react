@@ -8,40 +8,48 @@ import { Typography } from "@mui/material";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ producto }) {
-  const { nombre, descripcion, precio, img, stock } = producto;
-  
+
   const onAdd = () => { 
     console.log("agreste un producto");
   };
   return (
-    <Card sx={{ maxWidth: 300, padding: ".5rem", margin: "1rem" }} align="center">
+    <Card
+      sx={{ display: 'flex',flexDirection:'column' ,maxWidth: 300, padding: ".5rem", margin: "1rem" }}
+      align="center"
+    >
       <CardActionArea>
         <CardContent>
-          <Typography variant="h5" >
+          <Typography variant="h5">
             Detalle del Producto:{producto.nombre}
           </Typography>
         </CardContent>
         <CardMedia
           component="img"
           height="400"
-          image={img}
-          alt={nombre}
+          image={producto.img}
+          alt={producto.nombre}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {nombre}
+            {producto.nombre}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {descripcion}
+            {producto.descripcion}
           </Typography>
-          <Typography variant="h6">Precio: $ {precio}</Typography>
+          <Typography variant="h6">
+            Precio: $ {producto.precio}
+          </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions
-        style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
       >
-        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+        <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
       </CardActions>
     </Card>
-  )
+  );
 }

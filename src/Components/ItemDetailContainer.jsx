@@ -5,23 +5,23 @@ import ItemDetail from "./ItemDetail";
 import Loader from "./helper/Loader.js";
 
 export default function ItemDetailContainer() {
-  const [detalle, setDetalle] = useState({});
+  const [productoDetail, setProductoDetail] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
     data
-      .then((res) => setDetalle(res.find((item) => item.id === id)))
+      .then((res) => setProductoDetail(res.find((item) => item.id === id)))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, [id]);
 
   return (
-    <div>
+    <div style={{ textAlign: "center"}}>
       {loading ? (
         <Loader/>
       ) : (
-        <ItemDetail producto={detalle} />
+        <ItemDetail productoDetail={productoDetail} />
       )}
     </div>
   );

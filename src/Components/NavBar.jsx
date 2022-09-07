@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "./CartWidget";
 // import ItemListContainer from "./ItemListContainer";
 
-const pages = ["Productos", "Nuevos Ingresos", "Mas vendidos"];
+const pages = ["Bebidas", "Tortas", "Mas vendidos"];
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

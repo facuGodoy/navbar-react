@@ -22,8 +22,8 @@ export default function ItemList({ listProducts }) {
   return (
     <>
       <div className="cardContainer">
-        {listProducts.map((product) => {
-          return <Item key={product.id} producto={product} />;
+        {listProducts.map((producto) => {
+          return <Item key={producto.id} producto={producto} />;
         })}
       </div>
     </>
