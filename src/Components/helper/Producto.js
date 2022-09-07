@@ -1,6 +1,6 @@
 const productos = [
   {
-    id: "01",
+    id: 1,
     nombre: "Cheesecake frutos rojos",
     precio: 500,
     categoria: "tortas",
@@ -9,7 +9,7 @@ const productos = [
     stock: 10,
   },
   {
-    id: "02",
+    id: 2,
     nombre: "Chocotorta",
     precio: 400,
     categoria: "tortas",
@@ -18,7 +18,7 @@ const productos = [
     stock: 10,
   },
   {
-    id: "03",
+    id: 3,
     nombre: "Pastafrola",
     precio: 350,
     categoria: "tortas",
@@ -27,7 +27,7 @@ const productos = [
     stock: 10,
   },
   {
-    id: "04",
+    id: 4,
     nombre: "Bizcochuelo de naranja",
     precio: 300,
     categoria: "tortas",
@@ -36,7 +36,7 @@ const productos = [
     stock: 10,
   },
   {
-    id: "05",
+    id: 5,
     nombre: "Tostada Francesa",
     precio: 500,
     categoria: "tortas",
@@ -45,7 +45,7 @@ const productos = [
     stock: 10,
   },
   {
-    id: "06",
+    id: 6,
     nombre: "Waffles",
     precio: 600,
     categoria: "tortas",
@@ -54,7 +54,7 @@ const productos = [
     stock: 10,
   },
   {
-    id: "07",
+    id: 7,
     nombre: "Pancakes",
     precio: 500,
     categoria: "tortas",
@@ -64,7 +64,7 @@ const productos = [
     stock: 10,
   },
   {
-    id: "001",
+    id: 8,
     nombre: "Capucchino",
     precio: 450,
     categoria: "bebidas",
@@ -73,7 +73,7 @@ const productos = [
     stock: 5,
   },
   {
-    id: "002",
+    id: 9,
     nombre: "Latte",
     precio: 450,
     " categoria": "bebidas",
@@ -83,7 +83,7 @@ const productos = [
     stock: 5,
   },
   {
-    id: "003",
+    id: 10,
     nombre: "Te",
     precio: 300,
     categoria: "bebidas",
