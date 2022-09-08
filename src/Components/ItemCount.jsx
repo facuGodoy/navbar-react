@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
+// import { Link as RouterLink } from "react-router-dom";
 
 export default function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(initial);
+  // const [showButton, setShowButton] = useState(false);
 
   const increment = () => {
     if (count < stock) {
       setCount(count + 1);
     }
   };
-  const decrement= () => {
+  const decrement = () => {
     if (count > initial) {
       setCount(count - 1);
     }
@@ -23,18 +25,20 @@ export default function ItemCount({ stock, initial, onAdd }) {
           variant="contained"
           onClick={decrement}
           size="small"
-          style={{ marginLeft: "1rem", marginRight: "1rem" }}
+          style={{ fontSize: "1rem", marginLeft: "1rem", marginRight: "1rem" }}
         >
           -
         </Button>
-        <span style={{ marginLeft: "1rem", marginRight: "1rem" }}>
+        <span
+          style={{ fontSize: "1.2rem", marginLeft: "1rem", marginRight: "1rem" }}
+        >
           {count}
         </span>
         <Button
           variant="contained"
           onClick={increment}
           size="small"
-          style={{ marginLeft: "1rem", marginRight: "1rem" }}
+          style={{ fontSize: "1rem", marginLeft: "1rem", marginRight: "1rem" }}
         >
           +
         </Button>
@@ -45,10 +49,33 @@ export default function ItemCount({ stock, initial, onAdd }) {
           color="success"
           variant="contained"
           size="medium"
-          onClick={onAdd}
+          onClick={() => {
+            if (count > 0) {
+              onAdd(count);
+              // setShowButton(true);
+            }
+          }}
         >
           Agregar al carrito
         </Button>
+        {/* {!showButton ? (
+          <Button
+            variant="outlined"
+            onClick={() => {
+              if (count > 0) {
+                onAdd(count);
+                setShowButton(true);
+              }
+            }}
+            startIcon={<LocalMallIcon />}
+          >
+            Agregar al Carrito
+          </Button>
+        ) : (
+          <Button component={RouterLink} to={`/cart`} variant="contained">
+            Ir al Carrito
+          </Button>
+        )} */}
       </div>
     </div>
   );
