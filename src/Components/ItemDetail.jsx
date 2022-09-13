@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Card } from "@mui/material";
 import { CardContent } from "@mui/material";
@@ -6,14 +6,22 @@ import { CardMedia } from "@mui/material";
 import { CardActionArea } from "@mui/material";
 import { CardActions } from "@mui/material";
 import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import ItemCount from "./ItemCount";
+import { useNavigate } from "react-router-dom";
 
 export default function ItemDetail({ productDetail }) {
   const { name, description, price, img, stock } = productDetail;
+  const [count, setCount] = useState(1);
+  const [showButton, setShowButton] = useState(false);
+  const {navegateHome} = useNavigate();
 
   const onAdd = () => {
-    console.log("agreste un producto");
+    console.log(`Agregaste ${count} unidades al carrito`);
+    setShowButton(true);
   };
+
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -46,7 +54,18 @@ export default function ItemDetail({ productDetail }) {
             justifyContent: "center",
           }}
         >
-          <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+          {!showButton ? (
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount} />
+          ) : (
+              <div style={{padding: ".5rem", margin: ".5rem"}}>
+              <Button onClick={() => navegateHome(`/`)} to={`/cart`} size="medium" variant="contained" color="primary">
+                Seguir Comprando
+              </Button>
+              <Button onClick={() => navegateHome(`/cart`)} to={`/cart`} size="medium" variant="contained">
+                Ir al Carrito
+              </Button>
+            </div>
+          )}
         </CardActions>
       </Card>
     </React.Fragment>
