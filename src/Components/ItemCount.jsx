@@ -33,12 +33,7 @@ export default function ItemCount({ stock, initial, onAdd, count, setCount }) {
           color="success"
           variant="contained"
           size="medium"
-          onClick={() => {
-            if (count > 0) {
-              onAdd(count);
-              // setShowButton(true);
-            }
-          }}
+          onClick={onAdd}
         >
           Agregar al carrito
         </Button>
