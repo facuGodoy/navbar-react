@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Card } from "@mui/material";
 import { CardContent } from "@mui/material";
@@ -9,16 +9,28 @@ import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import ItemCount from "./ItemCount";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "./context/CartContext";
 
 export default function ItemDetail({ productDetail }) {
-  const { name, description, price, img, stock } = productDetail;
+  const { name, description, price, img, stock, id } = productDetail;
   const [count, setCount] = useState(1);
   const [showButton, setShowButton] = useState(false);
-  const {navegateHome} = useNavigate();
+  const { navegateHome } = useNavigate();
+  const { addItem } = useContext(CartContext);
 
   const onAdd = () => {
-    console.log(`Agregaste ${count} unidades al carrito`);
+    // ESTO FORMARIA PARTE DE LA PRIMERA FORMA 1 DE HACER EL addItem
+
+    let purchase = {
+      id,
+      name,
+      price,
+      stock,
+      img,
+      quantity: count,
+    };
     setShowButton(true);
+    addItem(purchase);
   };
 
 
