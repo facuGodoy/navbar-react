@@ -19,7 +19,7 @@ export default function ItemDetail({ productDetail }) {
   const { addItem } = useContext(CartContext);
 
   const onAdd = () => {
-    // ESTO FORMARIA PARTE DE LA PRIMERA FORMA 1 DE HACER EL addItem
+    // ESTO FORMARIA PARTE DE LA PRIMERA FORMA 2 DE HACER EL addItem
 
     let purchase = {
       id,
@@ -70,7 +70,7 @@ export default function ItemDetail({ productDetail }) {
             <ItemCount stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount} />
           ) : (
               <div style={{padding: ".5rem", margin: ".5rem"}}>
-              <Button onClick={() => navegateHome(`/`)} to={`/cart`} size="medium" variant="contained" color="primary">
+              <Button onClick={() => navegateHome(`/`)}  size="medium" variant="contained" color="primary">
                 Seguir Comprando
               </Button>
               <Button onClick={() => navegateHome(`/cart`)} to={`/cart`} size="medium" variant="contained">

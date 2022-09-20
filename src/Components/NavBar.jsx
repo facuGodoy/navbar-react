@@ -12,32 +12,24 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "./CartWidget";
+// import { NavLink } from "react-router-dom";
 // import ItemListContainer from "./ItemListContainer";
 // import Tooltip from "@mui/material/Tooltip";
 // import { Avatar } from "@mui/material";
 
 const pages = ["Bebidas", "Tortas", "Mas vendidos"];
-// const settings = ["Mi cuenta", "Mis pedidos", "Mis direcciones"];
+
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
 
   return (
     <AppBar position="static">
@@ -143,7 +135,10 @@ export default function NavBar() {
               </Button>
             ))}
           </Box>
-          <CartWidget />
+
+          {/* <NavLink to='/cart'> */}
+            <CartWidget />
+          {/* </NavLink> */}
 
           <Box sx={{ flexGrow: 0 }}></Box>
         </Toolbar>

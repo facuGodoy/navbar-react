@@ -1,15 +1,33 @@
-import React, { useContext } from 'react';
+import { Button } from "@mui/material";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import CartItem from "./CartItem";
 import { CartContext } from "./context/CartContext";
 
+
 export default function Cart() {
-  
-  const { cart, removeItem, clear } = useContext(CartContext);
+  const store = useNavigate();
+  const { cart, clear, cartTotal } = useContext(CartContext);
 
   return (
-    <div>
-      <div className='outlined'>
-        <h2>Proximamente Carrito..!</h2>
-      </div>
+    <div className="outlined">
+      {!cart.length ? (
+        <>
+          <h2>Carrito vacío...!</h2>
+          <h4>Te invitamos a que veas nustros productos!</h4>
+          <Button onClick={() => store("/")}>Ir a comprar..!</Button>
+        </>
+      ) : (
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".5rem" }}>
+          <h2>Tu carrito de compras</h2>
+            {cart.map((compra) => <CartItem compra={compra} key={compra.id} />)}
+          <span>Total a pagar: ${cartTotal()}</span>
+          <Button variant="contained" color="secondary" onClick={clear()}></Button>
+          <Button variant="outlined" color="success">
+            Terminar tu compra
+          </Button>
+        </div>
+      )}
     </div>
-  )
+  );
 }
