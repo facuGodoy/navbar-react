@@ -22,7 +22,7 @@ export default function Cart() {
           <h2>Tu carrito de compras</h2>
             {cart.map((compra) => <CartItem compra={compra} key={compra.id} />)}
           <span>Total a pagar: ${cartTotal()}</span>
-          <Button variant="contained" color="secondary" onClick={clear()}></Button>
+          <Button variant="contained" color="secondary" onClick={clear}>borrar</Button>
           <Button variant="outlined" color="success">
             Terminar tu compra
           </Button>

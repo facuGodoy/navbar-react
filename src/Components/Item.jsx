@@ -53,7 +53,7 @@ export default function Item({ product }) {
           endIcon={<SearchIcon variant="icons" />}
           color="success"
           variant="contained"
-          onClick={() => navigate(`/detail/${id}`)}
+          onClick={() => navigate(`/item/${id}`)}
         >
           Ver mas
         </Button>

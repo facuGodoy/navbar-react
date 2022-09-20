@@ -26,9 +26,6 @@ export default function ItemListContainer({ greeting, saludo }) {
       .finally(() => setLoading(false));
   }, [ categoryId ]);
 
-  // const onAdd = (resultado) => {
-  //   alert(`Agregaste ${resultado} unidades`);
-  // };
 
   return (
     <div

@@ -12,18 +12,18 @@ export default function ItemDetailContainer() {
 
   useEffect(() => {
     data
-      .then((res) => setProductDetail(res.find((item) => item.id === id)))
+      .then((res) => setProductDetail(res.find((item) => item.id === Number(id))))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, [id]);
 
-  // useEffect(() => { 
+  // useEffect(() => {
   //   const getProducts = new Promise((resolve, reject) => {
   //     setTimeout(() => {
   //       resolve(products);
   //     }, 2000);
   //   });
-  //   if (!id) { 
+  //   if (!id) {
   //     getProducts
   //       .then((res) => setProductDetail(res))
   //       .catch((err) => console.log(err))
@@ -36,13 +36,5 @@ export default function ItemDetailContainer() {
   //   }
   // }, [id]);
 
-  return (
-    <div style={{ textAlign: "center"}}>
-      {loading ? (
-        <Loader/>
-      ) : (
-        <ItemDetail productDetail={productDetail} />
-      )}
-    </div>
-  );
+  return <div style={{ textAlign: "center" }}>{loading ? <Loader /> : <ItemDetail productDetail={productDetail} />}</div>;
 }
