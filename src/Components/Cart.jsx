@@ -15,7 +15,7 @@ export default function Cart() {
         <>
           <h2>Carrito vacío...!</h2>
           <h4>Te invitamos a que veas nustros productos!</h4>
-          <Button onClick={() => store("/")}>Ir a comprar..!</Button>
+          <Button variant="contained" color="success" onClick={() => store("/")}>Ir a comprar..!</Button>
         </>
       ) : (
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".5rem" }}>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Logo from "../img/logo-eComerce.png";
+// import Logo from "../";
 // import { Link as RouterLink } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,13 +12,22 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "./CartWidget";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import ItemListContainer from "./ItemListContainer";
 // import Tooltip from "@mui/material/Tooltip";
 // import { Avatar } from "@mui/material";
 
 const pages = ["Bebidas", "Tortas", "Mas vendidos"];
-
+const links = [
+  {
+  id:'1b', name:'Bebidas', path:'/category/bebidas'
+  },
+  {
+  id:'2b', name:'Tortas', path:'/category/tortas'
+  },
+  {
+  id:'3b', name:'Mas vendidos', path:'/category/masVendidos'
+  },]
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,18 +44,18 @@ export default function NavBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <RouterLink to="/"> */}
-          <Box
-            sx={{
-              flexGrow: 0,
-              display: { xs: "none", md: "flex" },
-              height: "4rem",
-            }}
-            component="img"
-            alt="frambuesa"
-            src={Logo}
-          />
-          {/* </RouterLink> */}
+          <NavLink to="/">
+            <Box
+              sx={{
+                flexGrow: 0,
+                display: { xs: "none", md: "flex" },
+                height: "4rem",
+              }}
+              component="img"
+              alt="frambuesa"
+              src="./img/frambuesa.png"
+            />
+          </NavLink>
           <Typography
             variant="h6"
             noWrap
@@ -93,14 +102,12 @@ export default function NavBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                // <RouterLink key={page} to={`/category/${page}`}>
-                // PUSE EL KEY PARA QUE NO SE ROMPA
-
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {links.map((page) => (
+                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                  <NavLink to={page.path}>
+                    {page.name}
+                  </NavLink>
                 </MenuItem>
-                // </RouterLink>
               ))}
             </Menu>
           </Box>
@@ -123,22 +130,22 @@ export default function NavBar() {
             tegopet
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                // component={RouterLink}
-                // to={`/category/${page}`}
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button variant="contained" sx={{
+              textDecoration: "none",
+              textTransform: "none",
+            }}>
+              {links.map((page) => (
+                <NavLink to={page.path} key={page.name}
+                >
+                  {page.name}
+                </NavLink>
+              ))}
+            </Button>
           </Box>
 
-          {/* <NavLink to='/cart'> */}
-            <CartWidget />
-          {/* </NavLink> */}
+          <NavLink to='/cart'>
+          <CartWidget />
+          </NavLink>
 
           <Box sx={{ flexGrow: 0 }}></Box>
         </Toolbar>

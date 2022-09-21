@@ -15,7 +15,7 @@ export default function ItemDetail({ productDetail }) {
   const { name, description, price, img, stock, id } = productDetail;
   const [count, setCount] = useState(1);
   const [showButton, setShowButton] = useState(false);
-  const { navegateHome } = useNavigate();
+  const navegateHome  = useNavigate();
   const { addItem } = useContext(CartContext);
 
   const onAdd = () => {
