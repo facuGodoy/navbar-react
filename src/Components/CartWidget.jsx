@@ -8,7 +8,7 @@ export default function CartWidget() {
   return (
     <IconButton aria-label="cart">
       <LocalMallIcon style={{ color: "#000", width: "3rem", height: "3rem" }} />
-      <span style={{ color: "#f4f4f2" }}>{!cart.lenght ? "" : cartQuantity()}</span>
+      <span style={{ color: "#f4f4f2" }}>{!cart.lenght ? cartQuantity() : ''}</span>
     </IconButton>
   );
 }
