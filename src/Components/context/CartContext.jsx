@@ -6,8 +6,6 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item, cantidad) => {
-    // FORMA 1 - ESTA SERIA LA OTRA FORMA DE HACERLO CON UNA FUNCION QUE RECIBE EL ITEM Y LA CANTIDAD(de esta forma lo explico laura en el after es por eso que te pregunto cual de las dos formas es la correcta)
-
     let purchase = { ...item, quantity: cantidad };
     const existInCart = cart.find((prod) => prod.id === item.id);
     if (existInCart) {
@@ -23,27 +21,10 @@ export const CartProvider = ({ children }) => {
       setCart([...cart, purchase]);
     }
   };
-
-  // FORMA 2 - TE DEJO ESTAS DOS FORMAS DE HACER EL addItem, VOS ME DIRAS CUAL DE LAS DOS ES LA CORRECTA
-
-  // const addItem2 = (item) => {
-  // const existInCart = cart.find((prod) => prod.id === item.id)
-  // if (existInCart) {
-  //   const carritoActualizado = cart.map((prod) => {
-  //     if (prod.id === item.id) {
-  //       return { ...prod, quantity: prod.quantity + item.quantity }
-  // }else{
-  //   return prod
-  // }
-  // })
-  // setCart(carritoActualizado)
-  // } else {
-  //   setCart([...cart, item])
-  // }
-  // };
+    console.log(cart);
 
   const removeItem = (itemId) => {
-    setCart(cart.filter((cartItem) => cartItem.item.id !== itemId));
+    setCart(cart.filter((cartItem) => cartItem.id !== itemId));
   };
 
   const clear = () => {
@@ -64,7 +45,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const cartTotal = () => {
-    return cart.reduce((acc, prod) => (acc + (prod.quantity * prod.price)), 0);
+    return cart.reduce((acc, prod) => acc + prod.quantity * prod.price, 0);
   };
 
   return (
@@ -72,6 +53,6 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-//  FORMA MAS FACIL DE EXPORTAR EL CONTEXT CON UN CUSTOMHOOK
+//  FORMA MAS FACIL DE EXPORTAR EL CONTEXT CON UN CUSTOMEHOOK
 
 // export const useCartContext = () => useContext(CartContext);

@@ -26,7 +26,7 @@ const links = [
   id:'2b', name:'Tortas', path:'/category/tortas'
   },
   {
-  id:'3b', name:'Mas vendidos', path:'/category/masVendidos'
+  id:'3b', name:'Batidos', path:'/category/batidos'
   },]
 
 export default function NavBar() {
@@ -53,7 +53,7 @@ export default function NavBar() {
               }}
               component="img"
               alt="frambuesa"
-              src="./img/frambuesa.png"
+              src="https://i.postimg.cc/ZYvYqjz9/logo-e-Comerce.png"
             />
           </NavLink>
           <Typography
@@ -104,9 +104,7 @@ export default function NavBar() {
             >
               {links.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <NavLink to={page.path}>
-                    {page.name}
-                  </NavLink>
+                  <NavLink to={page.path}>{page.name}</NavLink>
                 </MenuItem>
               ))}
             </Menu>
@@ -130,21 +128,23 @@ export default function NavBar() {
             tegopet
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button variant="contained" sx={{
-              textDecoration: "none",
-              textTransform: "none",
-            }}>
+            <Button
+              variant="contained"
+              sx={{
+                textDecoration: "none",
+                textTransform: "none",
+              }}
+            >
               {links.map((page) => (
-                <NavLink to={page.path} key={page.name}
-                >
+                <NavLink to={page.path} key={page.name}>
                   {page.name}
                 </NavLink>
               ))}
             </Button>
           </Box>
 
-          <NavLink to='/cart'>
-          <CartWidget />
+          <NavLink to="/cart">
+            <CartWidget />
           </NavLink>
 
           <Box sx={{ flexGrow: 0 }}></Box>

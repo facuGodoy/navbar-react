@@ -12,11 +12,11 @@ export default function Cart() {
   return (
     <div className="outlined">
       {!cart.length ? (
-        <>
+        <div>
           <h2>Carrito vacío...!</h2>
           <h4>Te invitamos a que veas nustros productos!</h4>
           <Button variant="contained" color="success" onClick={() => store("/")}>Ir a comprar..!</Button>
-        </>
+        </div>
       ) : (
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".5rem" }}>
           <h2>Tu carrito de compras</h2>
