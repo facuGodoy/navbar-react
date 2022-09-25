@@ -1,6 +1,5 @@
-const products = [
+export const products = [
   {
-    id: 1,
     name: "Cheesecake frutos rojos",
     price: 500,
     category: "tortas",
@@ -9,7 +8,6 @@ const products = [
     stock: 10,
   },
   {
-    id: 2,
     name: "Chocotorta",
     price: 400,
     category: "tortas",
@@ -18,7 +16,6 @@ const products = [
     stock: 10,
   },
   {
-    id: 3,
     name: "Pastafrola",
     price: 350,
     category: "tortas",
@@ -27,7 +24,6 @@ const products = [
     stock: 10,
   },
   {
-    id: 4,
     name: "Bizcochuelo de naranja",
     price: 300,
     category: "tortas",
@@ -36,7 +32,6 @@ const products = [
     stock: 10,
   },
   {
-    id: 5,
     name: "Tostada Francesa",
     price: 500,
     category: "tortas",
@@ -45,7 +40,6 @@ const products = [
     stock: 10,
   },
   {
-    id: 6,
     name: "Waffles",
     price: 600,
     category: "tortas",
@@ -54,7 +48,6 @@ const products = [
     stock: 10,
   },
   {
-    id: 7,
     name: "Pancakes",
     price: 500,
     category: "tortas",
@@ -63,7 +56,6 @@ const products = [
     stock: 10,
   },
   {
-    id: 8,
     name: "Capucchino",
     price: 450,
     category: "bebidas",
@@ -72,7 +64,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 9,
     name: "Latte",
     price: 450,
     category: "bebidas",
@@ -81,7 +72,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 10,
     name: "Te",
     price: 300,
     category: "bebidas",
@@ -90,7 +80,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 16,
     name: "Jugo de naranja",
     price: 300,
     category: "bebidas",
@@ -99,7 +88,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 11,
     name: "Batido de chocolate",
     price: 300,
     category: "batidos",
@@ -108,7 +96,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 12,
     name: "Batido de frutos rojos",
     price: 300,
     category: "batidos",
@@ -117,7 +104,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 13,
     name: "Batido de oreo",
     price: 300,
     category: "batidos",
@@ -126,7 +112,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 14,
     name: "Batido de frutillas",
     price: 300,
     category: "batidos",
@@ -135,7 +120,6 @@ const products = [
     stock: 5,
   },
   {
-    id: 15,
     name: "Milkshake de chocolate",
     price: 300,
     category: "batidos",

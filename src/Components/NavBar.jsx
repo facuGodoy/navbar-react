@@ -146,8 +146,6 @@ export default function NavBar() {
           <NavLink to="/cart">
             <CartWidget />
           </NavLink>
-
-          <Box sx={{ flexGrow: 0 }}></Box>
         </Toolbar>
       </Container>
     </AppBar>
