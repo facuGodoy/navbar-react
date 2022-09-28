@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Card } from "@mui/material";
+import { Card, CardHeader, Grid } from "@mui/material";
 import { CardContent } from "@mui/material";
 import { CardMedia } from "@mui/material";
 import { CardActionArea } from "@mui/material";
@@ -10,6 +10,7 @@ import { Button } from "@mui/material";
 import ItemCount from "./ItemCount";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "./context/CartContext";
+import Swal from "sweetalert2";
 
 export default function ItemDetail({ productDetail }) {
   const { name, description, price, img, stock, id } = productDetail;
@@ -19,6 +20,7 @@ export default function ItemDetail({ productDetail }) {
   const { addItem } = useContext(CartContext);
 
   const onAdd = () => {
+    Swal.fire("Producto agregado al carrito, ¿Deseas continuar comprando?", "", "success");
     let purchase = {
       id,
       name,
@@ -32,8 +34,7 @@ export default function ItemDetail({ productDetail }) {
 
 
   return (
-    <React.Fragment>
-      <CssBaseline />
+    <Grid container justifyContent='center' alignContent='center'>
       <Card
         sx={{
           display: "flex",
@@ -42,12 +43,11 @@ export default function ItemDetail({ productDetail }) {
           padding: ".5rem",
           margin: "1rem",
         }}
-        align="center"
       >
         <CardActionArea>
-          <CardContent>
-            <Typography variant="h5">Detalle del Producto:{name}</Typography>
-          </CardContent>
+          <Card>
+            <Typography variant="h6">Detalle del Producto:{name}</Typography>
+          </Card>
           <CardMedia component="img" height="400" image={img} alt={name} />
           <CardContent>
             <Typography variant="body1" color="text.secondary">
@@ -89,6 +89,6 @@ export default function ItemDetail({ productDetail }) {
           )}
         </CardActions>
       </Card>
-    </React.Fragment>
+    </Grid>
   );
 }

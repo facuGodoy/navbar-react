@@ -1,9 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem("cart"));
+    localData && setCart(localData);
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [ cart ]);
 
   const addItem = (item, cantidad) => {
     let purchase = { ...item, quantity: cantidad };
@@ -13,6 +23,11 @@ export const CartProvider = ({ children }) => {
         if (prod.id === item.id) {
           return { ...prod, quantity: prod.quantity + cantidad };
         } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No hay stock suficiente!",
+          });
           return prod;
         }
       });

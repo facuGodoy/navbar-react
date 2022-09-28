@@ -2,16 +2,15 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../helper/FireBase";
-
+import Swal from "sweetalert2";
 
 export default function useForm(initialForm, validateForm) {
   const [form, setForm] = useState(initialForm);
   const [errors, setErros] = useState({});
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
-  const [orderId, setOrderId] = useState('');
+  const [orderId, setOrderId] = useState("");
   const { cart, cartTotal, clear } = useContext(CartContext);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +24,7 @@ export default function useForm(initialForm, validateForm) {
 
   const handleSubmit = (e) => {
     setLoading(true);
+    Swal.fire("Producto enviado", "", "success");
     e.preventDefault();
     const dataStore = collection(db, "Orders");
     addDoc(dataStore, {
@@ -32,18 +32,19 @@ export default function useForm(initialForm, validateForm) {
       items: cart,
       total: cartTotal(),
       date: serverTimestamp(),
-    }).then((res) => {
-      setOrderId(res.id);
-      setResponse(true);
-      clear();
-    }).catch((err) => { 
-      setResponse(false);
-
-    }).finally(() => {
-      setLoading(false);
-    });
+    })
+      .then((res) => {
+        setOrderId(res.id);
+        setResponse(true);
+        clear();
+      })
+      .catch((err) => {
+        setResponse(false);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
-
 
   return {
     orderId,

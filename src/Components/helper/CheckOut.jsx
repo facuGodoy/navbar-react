@@ -5,6 +5,7 @@ import { InputUnstyled, TextareaAutosize } from "@mui/base";
 import { Alert, Button, FormControl, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader.js";
+import Swal from "sweetalert2";
 
 const initialForm = {
   name: "",
@@ -197,15 +198,18 @@ export default function CheckOut() {
           </form>
         </div>
       ) : (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", padding: "2rem" }}>
-          <h2>Muchas gracias por tu compra</h2>
-          <h4>Su orden es: {orderId}</h4>
-          <p>Te contactaremos a la brevedad</p>
-          <Button onClick={() => navigateHome("/")} variant="contained" color="secondary">
-            Volver
-          </Button>
-        </div>
+        <>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", padding: "2rem" }}>
+            <Typography variant="h3">Muchas gracias por tu compra</Typography>
+            <Typography variant="h6">Su orden es: {orderId}</Typography>
+            <Typography>Te contactaremos a la brevedad</Typography>
+            <Button onClick={() => navigateHome("/")} variant="contained" color="secondary">
+              <Typography>Volver</Typography>
+            </Button>
+          </div>
+        </>
       )}
     </div>
   );
 }
+
