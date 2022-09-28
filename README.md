@@ -4,7 +4,7 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 
 # Preview
 
-[image](...)
+[link WEb](https://proyectoreact-ecomerce.web.app/)
 
 # Librerias Externas Implementadas
 
@@ -16,7 +16,7 @@ Material UI: opte por esta libreria ya que a mi entender y despues de ver otras,
 
 # Autor
 
-[link]("https://github.com/facuGodoy") Godoy Facundo Nicolas
+[link](https://github.com/facuGodoy) Godoy Facundo Nicolas
 
 # Sobre mi 
 
