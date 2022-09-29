@@ -6,10 +6,8 @@ import { CardMedia } from "@mui/material";
 import { Button, CardActionArea } from "@mui/material";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify"
 import { Link as RouterLink } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-// import ItemCount from "./ItemCount";
 
 export default function Item({ product }) {
   const { name, description, price, img, id, stock } = product;

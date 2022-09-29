@@ -28,12 +28,5 @@ export default function ItemDetailContainer() {
       });
   }, [id]);
 
-  // useEffect(() => {
-  //   data
-  //     .then((res) => setProductDetail(res.find((item) => item.id === Number(id))))
-  //     .catch((err) => console.log(err))
-  //     .finally(() => setLoading(false));
-  // }, [id]);
-
   return <div style={{ textAlign: "center" }}>{loading ? <Loader /> : <ItemDetail productDetail={productDetail} />}</div>;
 }

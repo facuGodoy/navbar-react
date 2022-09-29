@@ -17,3 +17,42 @@ code {
   padding: .5rem;
 }
 
+.cartVacio {
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.cartVacio button{
+  margin: .5rem;
+  padding: .5rem;
+  
+}
+
+.links{
+  text-decoration: none;
+  color: #F8EDEB;
+  padding: .5rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.itemCart{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+
+}
+
+.itemCenter{
+  max-width: 90vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem;
+  margin: 1rem;
+  align-items: center;
+}

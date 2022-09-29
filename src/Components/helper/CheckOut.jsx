@@ -5,7 +5,6 @@ import { InputUnstyled, TextareaAutosize } from "@mui/base";
 import { Alert, Button, FormControl, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader.js";
-import Swal from "sweetalert2";
 
 const initialForm = {
   name: "",
@@ -94,21 +93,11 @@ const StyledInputElement = styled("input")(
 `
 );
 
-// const CustomInput = React.forwardRef(function CustomInput(
-//   props: React.InputHTMLAttributes<HTMLInputElement>,
-//   ref: React.ForwardedRef<HTMLDivElement>
-// ) {
-//   return <InputUnstyled components={{ Input: StyledInputElement }} {...props} ref={ref} />;
-// });
-
 export default function CheckOut() {
   const { orderId, form, errors, loading, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validateForm);
 
   const navigateHome = useNavigate();
 
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <div>
@@ -193,23 +182,21 @@ export default function CheckOut() {
 
               <Button type="submit" value="Enviar" color="success" variant="contained">
                 <Typography>Enviar Pedido</Typography>
+                {loading ? <Loader /> : ''}
               </Button>
             </FormControl>
           </form>
         </div>
       ) : (
-        <>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", padding: "2rem" }}>
-            <Typography variant="h3">Muchas gracias por tu compra</Typography>
-            <Typography variant="h6">Su orden es: {orderId}</Typography>
-            <Typography>Te contactaremos a la brevedad</Typography>
-            <Button onClick={() => navigateHome("/")} variant="contained" color="secondary">
-              <Typography>Volver</Typography>
-            </Button>
-          </div>
-        </>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", padding: "2rem" }}>
+          <Typography variant="h3">Muchas gracias por tu compra</Typography>
+          <Typography variant="h6">Su orden es: {orderId}</Typography>
+          <Typography>Te contactaremos a la brevedad</Typography>
+          <Button onClick={() => navigateHome("/")} variant="contained" color="secondary">
+            <Typography>Volver</Typography>
+          </Button>
+        </div>
       )}
     </div>
   );
 }
-

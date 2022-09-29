@@ -1,6 +1,4 @@
 import * as React from "react";
-// import Logo from "../";
-// import { Link as RouterLink } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,11 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "./CartWidget";
 import { NavLink } from "react-router-dom";
-// import ItemListContainer from "./ItemListContainer";
-// import Tooltip from "@mui/material/Tooltip";
-// import { Avatar } from "@mui/material";
 
-const pages = ["Bebidas", "Tortas", "Mas vendidos"];
 const links = [
   {
   id:'1b', name:'Bebidas', path:'/category/bebidas'
@@ -48,7 +42,7 @@ export default function NavBar() {
             <Box
               sx={{
                 flexGrow: 0,
-                display: { xs: "none", md: "flex" },
+                display: { md: "flex" },
                 height: "4rem",
               }}
               component="img"
@@ -61,7 +55,7 @@ export default function NavBar() {
             noWrap
             sx={{
               mr: 2,
-              display: { md: "flex" },
+              display: { md: "flex", xs: "none" },
               fontFamily: "special elite",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -72,7 +66,6 @@ export default function NavBar() {
           >
             E-Commerce
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -104,7 +97,9 @@ export default function NavBar() {
             >
               {links.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <NavLink to={page.path}>{page.name}</NavLink>
+                  <NavLink className="links" to={page.path}>
+                    {page.name}
+                  </NavLink>
                 </MenuItem>
               ))}
             </Menu>
@@ -112,8 +107,7 @@ export default function NavBar() {
           <Typography
             variant="h6"
             noWrap
-            // component={RouterLink}
-            // to={`/`}
+            to={`/`}
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -125,7 +119,7 @@ export default function NavBar() {
               textDecoration: "none",
             }}
           >
-            tegopet
+            E-Commerce
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -136,14 +130,14 @@ export default function NavBar() {
               }}
             >
               {links.map((page) => (
-                <NavLink to={page.path} key={page.name}>
+                <NavLink className="links" to={page.path} key={page.name}>
                   {page.name}
                 </NavLink>
               ))}
             </Button>
           </Box>
 
-          <NavLink to="/cart">
+          <NavLink className="links" to="/cart">
             <CartWidget />
           </NavLink>
         </Toolbar>

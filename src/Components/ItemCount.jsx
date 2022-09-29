@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-// import { Link as RouterLink } from "react-router-dom";
 
 export default function ItemCount({ stock, initial, onAdd, count, setCount }) {
 
@@ -37,34 +36,7 @@ export default function ItemCount({ stock, initial, onAdd, count, setCount }) {
         >
           Agregar al carrito
         </Button>
-        {/* {!showButton ? (
-          <Button
-            endIcon={<LocalMallIcon variant="icons" />}
-            color="success"
-            variant="contained"
-            size="medium"
-            onClick={() => {
-              if (count > 0) {
-                onAdd(count);
-                setShowButton(true);
-              }
-            }}
-            startIcon={<LocalMallIcon />}
-          >
-            Agregar al Carrito
-          </Button>
-        ) : (
-          <Button  to={`/cart`} size="medium" variant="contained">
-            Ir al Carrito
-          </Button>
-        )} */}
       </div>
     </div>
   );
 }
-
-ItemCount.defaultProps = {
-  titulo: "Clicks",
-};
-
-// component = { RouterLink };

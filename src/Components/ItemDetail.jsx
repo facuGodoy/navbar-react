@@ -1,22 +1,15 @@
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import { Card, CardHeader, Grid } from "@mui/material";
-import { CardContent } from "@mui/material";
-import { CardMedia } from "@mui/material";
-import { CardActionArea } from "@mui/material";
-import { CardActions } from "@mui/material";
-import { Typography } from "@mui/material";
-import { Button } from "@mui/material";
-import ItemCount from "./ItemCount";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "./context/CartContext";
 import Swal from "sweetalert2";
+import { CartContext } from "./context/CartContext";
+import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ productDetail }) {
-  const { name, description, price, img, stock, id } = productDetail;
+  const { name, detail, price, img, stock, id } = productDetail;
   const [count, setCount] = useState(1);
   const [showButton, setShowButton] = useState(false);
-  const navegateHome  = useNavigate();
+  const navegateHome = useNavigate();
   const { addItem } = useContext(CartContext);
 
   const onAdd = () => {
@@ -32,9 +25,8 @@ export default function ItemDetail({ productDetail }) {
     setShowButton(true);
   };
 
-
   return (
-    <Grid container justifyContent='center' alignContent='center'>
+    <Grid container justifyContent="center" alignContent="center">
       <Card
         sx={{
           display: "flex",
@@ -46,12 +38,12 @@ export default function ItemDetail({ productDetail }) {
       >
         <CardActionArea>
           <Card>
-            <Typography variant="h6">Detalle del Producto:{name}</Typography>
+            <Typography variant="h4">{name}</Typography>
           </Card>
           <CardMedia component="img" height="400" image={img} alt={name} />
           <CardContent>
-            <Typography variant="body1" color="text.secondary">
-              {description}
+            <Typography variant="h6" color="text.secondary">
+              Detalle del Producto:{detail}
             </Typography>
             <Typography variant="h6">price: $ {price}</Typography>
           </CardContent>
@@ -72,7 +64,7 @@ export default function ItemDetail({ productDetail }) {
                 onClick={() => navegateHome(`/`)}
                 size="medium"
                 variant="contained"
-                color="primary"
+                color="success"
               >
                 Seguir Comprando
               </Button>
@@ -82,6 +74,7 @@ export default function ItemDetail({ productDetail }) {
                 to={`/cart`}
                 size="medium"
                 variant="contained"
+                color="error"
               >
                 Ir al Carrito
               </Button>
