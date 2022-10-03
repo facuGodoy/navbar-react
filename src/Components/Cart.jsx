@@ -9,6 +9,7 @@ export default function Cart() {
   const store = useNavigate();
   const { cart, clear, cartTotal } = useContext(CartContext);
 
+
   return (
     <div className="">
       <div className="outlined">
