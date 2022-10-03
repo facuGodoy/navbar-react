@@ -12,7 +12,7 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 
 [link Web](https://proyectoreact-ecomerce.web.app/)
 
-[image](https://img.shields.github)
+[Gif]()
 
 # GIF de Navegacion.
 
@@ -40,11 +40,11 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 
 # Librerias Externas Implementadas
 
-FireBase: DataBase y Hosting.
+[FireBase](https://firebase.google.com/?hl=es): DataBase y Hosting.
 
-SweetAlert y Tostify: a mi entender exelentes y muy linas visualmente.
+[SweetAlert y Tostify](https://sweetalert2.github.io/): a mi entender exelentes y muy linas visualmente.
 
-Material UI: opte por esta libreria ya que a mi entender y despues de ver otras, me parecio la mas completa.
+[Material UI](https://mui.com/): opte por esta libreria ya que a mi entender y despues de ver otras, me parecio la mas completa.
 
 # Autor
 
@@ -52,6 +52,4 @@ Material UI: opte por esta libreria ya que a mi entender y despues de ver otras,
 
 # Sobre mi 
 
-
-
-Soy estudiante de programacion Front End en CoderHouse ([Coder](https://plataforma.coderhouse.com)), es mi primera ves en este mundo y me encantaria poder dedicarme a esto ya que me parece un ecosistema muy interesante todo lo referido a la programacion.
+Soy estudiante de programacion Front End en [CoderHouse](https://plataforma.coderhouse.com), es mi primera ves en este mundo y me encantaria poder dedicarme a esto ya que me parece un ecosistema muy interesante todo lo referido a la programacion.
