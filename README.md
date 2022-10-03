@@ -48,8 +48,8 @@ Material UI: opte por esta libreria ya que a mi entender y despues de ver otras,
 
 # Autor
 
-[https://github.com/facuGodoy] Godoy Facundo Nicolas
+[Godoy Facundo Nicolas](https://github.com/facuGodoy) 
 
 # Sobre mi 
 
-Soy estudiante de programacion Front End en [link] (https://plataforma.coderhouse.com), es mi primera ves en este mundo y me encantaria poder dedicarme a esto ya que me parece un ecosistema muy interesante todo lo referido a la programacion.
+Soy estudiante de programacion Front End en [Coder] (https://plataforma.coderhouse.com), es mi primera ves en este mundo y me encantaria poder dedicarme a esto ya que me parece un ecosistema muy interesante todo lo referido a la programacion.
