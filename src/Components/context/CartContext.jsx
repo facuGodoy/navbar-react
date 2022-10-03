@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
     const existInCart = cart.find((prod) => prod.id === item.id);
     if (existInCart) {
       const carritoActualizado = cart.map((prod) => {
-        if (prod.id === item.id && prod.quantity < prod.stock) {
+        if (prod.id === item.id && prod.quantity <= prod.stock) {
           return { ...prod, quantity: prod.quantity + cantidad };
         } else {
           Swal.fire({
