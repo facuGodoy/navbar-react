@@ -31,8 +31,8 @@ export default function Cart() {
             {cart.map((compra) => (
               <CartItem compra={compra} key={compra.id} />
             ))}
-            <span>Total a pagar: ${cartTotal()}</span>
-            <Box style={{padding:'.5rem', margin:'0.5rem'}}>
+            <span>Total a pagar: ${cartTotal().toLocaleString("de-DE")}</span>
+            <Box style={{ padding: ".5rem", margin: "0.5rem" }}>
               <Button className="itemCenter" style={{ fontSize: ".5rem" }} variant="contained" color="secondary" onClick={clear}>
                 vaciar carrito
               </Button>

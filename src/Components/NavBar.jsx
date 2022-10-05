@@ -96,7 +96,7 @@ export default function NavBar() {
               }}
             >
               {links.map((page) => (
-                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                <MenuItem style={{ backgroundColor: "#ffab91" }} key={page.id} onClick={handleCloseNavMenu}>
                   <NavLink className="links" to={page.path}>
                     {page.name}
                   </NavLink>
