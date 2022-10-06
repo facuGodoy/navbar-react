@@ -23,11 +23,6 @@ export const CartProvider = ({ children }) => {
         if (prod.id === item.id && prod.quantity <= prod.stock) {
           return { ...prod, quantity: prod.quantity + cantidad };
         } else {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "No hay stock suficiente!",
-          });
           return prod;
         }
       });

@@ -10,7 +10,7 @@ export default function ItemDetail({ productDetail }) {
   const [count, setCount] = useState(1);
   const [showButton, setShowButton] = useState(false);
   const navegateHome = useNavigate();
-  const { addItem } = useContext(CartContext);
+  const { addItem, cart } = useContext(CartContext);
 
   const onAdd = () => {
     Swal.fire("Producto agregado al carrito, ¿Deseas continuar comprando?", "", "success");
@@ -23,6 +23,20 @@ export default function ItemDetail({ productDetail }) {
     };
     addItem(purchase, count);
     setShowButton(true);
+  };
+
+  const substractStock = () => { 
+    const itemFound = cart.find((prod) => prod.id === id);
+    if (itemFound) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops Perdon...!",
+        text: "No hay stock suficiente!",
+      });
+      return (stock - itemFound.quantity);
+    } else {
+      return stock;
+    }
   };
 
   return (
@@ -56,7 +70,7 @@ export default function ItemDetail({ productDetail }) {
           }}
         >
           {!showButton ? (
-            <ItemCount stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount} />
+            <ItemCount substractStock={substractStock()} stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount} />
           ) : (
             <div style={{ padding: ".5rem", margin: ".5rem" }}>
               <Button
