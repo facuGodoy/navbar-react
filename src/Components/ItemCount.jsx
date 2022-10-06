@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import { Box } from "@mui/system";
 
 export default function ItemCount({ stock, initial, onAdd, count, setCount, substractStock }) {
   const increment = () => {
