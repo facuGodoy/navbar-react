@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "proyectoreact-ecomerce"
-  }
+    "default": "proyectoreact-ecomerce",
+    "proyectoreact-ecomerce": "proyectoreact-ecomerce"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -1,6 +1,6 @@
 # My E-Commerce React
 
-Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use React junto con Material UI para mi curso de React Js de CoderHouse. tambien aplique algunos conocimientos de JavaScritpt y estilos con CSS.
+Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use React junto con Material UI para mi curso de React Js de CoderHouse. tambien aplique algunos conocimientos de JavaScritpt y estilos con CSS. 
 
 # Comandos Basicos de la app.
 
@@ -10,7 +10,7 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 
 # Preview
 
-[link Web](https://proyectoreact-ecomerce.web.app/)
+[Link Web](https://navbar-react-rust.vercel.app/)
 
 [Gif]()
 
@@ -40,7 +40,9 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 
 # Librerias Externas Implementadas
 
-[FireBase](https://firebase.google.com/?hl=es): DataBase y Hosting.
+[FireBase](https://firebase.google.com/?hl=es): DataBase .
+
+[Vercel](https://vercel.com/): Hosting, elegi vercel ya que tuve algunos problemas con firebase como hosting.
 
 [SweetAlert y Tostify](https://sweetalert2.github.io/): a mi entender exelentes y muy linas visualmente.
 
