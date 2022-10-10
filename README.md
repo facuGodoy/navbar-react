@@ -1,4 +1,4 @@
-# My E-Commerce React
+# My E-Commerce React "Chanchito Feliz"
 
 Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use React junto con Material UI para mi curso de React Js de CoderHouse. tambien aplique algunos conocimientos de JavaScritpt y estilos con CSS. 
 
@@ -9,7 +9,7 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 2 - Crear una nueva app: npm create-react.app,
 
 # Preview
-[Link Web](https://navbar-react-rust.vercel.app/)
+["Chanchito Feliz"](https://navbar-react-rust.vercel.app/)
 
 [Gif](GIF%20navegacion.gif)
 

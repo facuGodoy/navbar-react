@@ -64,7 +64,7 @@ export default function NavBar() {
               padding: "1rem",
             }}
           >
-            E-Commerce
+            Chanchito Feliz
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -119,7 +119,7 @@ export default function NavBar() {
               textDecoration: "none",
             }}
           >
-            E-Commerce
+            Chanchito Feliz
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
