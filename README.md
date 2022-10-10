@@ -11,7 +11,7 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 # Preview
 [Link Web](https://navbar-react-rust.vercel.app/)
 
-[Gif]![](GIF%20navegacion.gif)
+[Gif](GIF%20navegacion.gif)
 
 
 # Dependecias Utilizadas 
