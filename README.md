@@ -1,4 +1,4 @@
-# My E-Commerce React "Chanchito Feliz"
+# My E-Commerce React, "Chanchito Feliz"
 
 Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use React junto con Material UI para mi curso de React Js de CoderHouse. tambien aplique algunos conocimientos de JavaScritpt y estilos con CSS. 
 
@@ -9,9 +9,10 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 2 - Crear una nueva app: npm create-react.app,
 
 # Preview
+
 ["Chanchito Feliz"](https://navbar-react-rust.vercel.app/)
 
-[Gif](GIF%20navegacion.gif)
+[Gif de Navegacion](GIF%20navegacion.gif)
 
 
 # Dependecias Utilizadas 
@@ -41,7 +42,7 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 
 [Vercel](https://vercel.com/): Hosting, elegi vercel ya que tuve algunos problemas con firebase como hosting.
 
-[SweetAlert y Tostify](https://sweetalert2.github.io/): a mi entender exelentes y muy linas visualmente.
+[SweetAlert y Tostify](https://sweetalert2.github.io/): a mi entender exelentes y muy lindas visualmente.
 
 [Material UI](https://mui.com/): opte por esta libreria ya que a mi entender y despues de ver otras, me parecio la mas completa.
 
