@@ -11,8 +11,8 @@ export default function Cart() {
 
 
   return (
-    <div className="">
-      <div className="outlined">
+    
+      <div className="cart">
         {!cart.length ? (
           <div className="cartVacio">
             <Typography variant="h4" style={{ textDecoration: "underline", padding: ".5rem" }}>
@@ -49,6 +49,5 @@ export default function Cart() {
           </div>
         )}
       </div>
-    </div>
   );
 }
