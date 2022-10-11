@@ -16,7 +16,7 @@ export default function Footer() {
 
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", marginTop: "5rem" }}>
+    <div style={{ display: "flex", justifyContent: "center", marginTop: "10rem" }}>
       {loading ? (
         <Loader />
       ) : (

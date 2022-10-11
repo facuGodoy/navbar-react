@@ -59,13 +59,12 @@ code {
 
 .footer {
   display: block;
+  justify-content: end;
   background-color: #000;
   width: 100%;
   box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
   z-index: 10000;
-  position: static;
-  bottom: 0;
-  margin-top: 1rem;
+  margin-top: inherit;
 }
 
 
