@@ -30,7 +30,6 @@ export const CartProvider = ({ children }) => {
       setCart([...cart, purchase]);
     }
   };
-  console.log(cart);
 
   const removeItem = (itemId) => {
     setCart(cart.filter((cartItem) => cartItem.id !== itemId));

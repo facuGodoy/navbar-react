@@ -4,11 +4,19 @@ Este es mi E-commerce el cual es una cafeteria-pasteleria, para el cual use Reac
 
 # Comandos Basicos de la app.
 
-1 - Correr la app: npm start,
+Correr la app: npm start,
 
-2 - Crear una nueva app: npm create-react.app,
+Crear una nueva app: npx create-react.app,
 
-# Preview
+React Router Dom npm install react-router-dom,
+
+React Icons npm install react-icons --save,
+
+Firebase v 8.9.1 npm install firebase@9.10.0,
+
+Deploy npm run build (aunque en este caso no lo use ya que utilice vercel para el deploy),
+
+# Links de la app.
 
 ["Chanchito Feliz"](https://navbar-react-rust.vercel.app/)
 
