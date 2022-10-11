@@ -20,7 +20,7 @@ Deploy npm run build (aunque en este caso no lo use ya que utilice vercel para e
 
 ["Chanchito Feliz"](https://navbar-react-rust.vercel.app/)
 
-[Gif de Navegacion](GIF%20navegacion.gif)
+![Gif de Navegacion](GIF-navegacion.gif)
 
 
 # Dependecias Utilizadas 
