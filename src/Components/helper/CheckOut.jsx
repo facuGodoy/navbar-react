@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import useForm from "../hook/useForm";
 import { styled } from "@mui/system";
 import { InputUnstyled, TextareaAutosize } from "@mui/base";
 import { Alert, Button, FormControl, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader.js";
+import { CartContext } from "../context/CartContext";
 
 const initialForm = {
   name: "",
@@ -97,13 +98,15 @@ export default function CheckOut() {
   const { orderId, form, errors, loading, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validateForm);
 
   const navigateHome = useNavigate();
+  const { cartTotal } = useContext(CartContext);
 
 
   return (
     <div>
       {!orderId ? (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", padding: "2rem" }}>
-          <h2>Formulario de compra</h2>
+          <Typography variant="h3" style={{textDecoration:'underline', marginBottom:'1.5rem', textTransform:'uppercase'}}>Formulario de compra</Typography>
+          <Typography variant="h5" className="formTotal">Tu saldo a pagar: ${cartTotal()}.00</Typography>
           <form onSubmit={handleSubmit} style={{ padding: "1rem" }}>
             <FormControl>
               <InputUnstyled
@@ -182,7 +185,7 @@ export default function CheckOut() {
 
               <Button type="submit" value="Enviar" color="success" variant="contained">
                 <Typography>Enviar Pedido</Typography>
-                {loading ? <Loader /> : ''}
+                {loading ? <Loader /> : ""}
               </Button>
             </FormControl>
           </form>

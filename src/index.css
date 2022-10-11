@@ -90,3 +90,12 @@ code {
 #facebook:hover{
   color: #1565c0
 }
+
+.formTotal{
+  margin: 1rem .5rem 1rem .5rem;
+  padding:1.5rem .5rem 1.5rem .5rem;
+  background-color: #000;
+  border: solid .2rem #F8ED;
+  color: whitesmoke;
+  box-shadow: 0 -5px 6px rgba(0,0,0,0.5);
+}
