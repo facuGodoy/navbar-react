@@ -12,7 +12,22 @@ export default function Footer() {
       setloading(false);
     }, 2000);
   }, [])
-  
+
+  const facebook = () => { 
+    window.open("https://www.facebook.com/", "_blank"); 
+  }
+
+  const instagram = () => { 
+    window.open("https://www.instagram.com/", "_blank"); 
+  }
+
+  const twitter = () => { 
+    window.open("https://twitter.com/", "_blank"); 
+  }
+
+  const whatsapp = () => { 
+    window.open("https://www.whatsapp.com//", "_blank"); 
+  }
 
 
   return (
@@ -33,16 +48,16 @@ export default function Footer() {
             </Typography>
 
             <div style={{ display: "flex", justifyContent: "center", gridColumnGap: "8%", padding: "2vh 0" }}>
-              <Link href="https://www.facebook.com/" color="secondary">
+              <Link onClick={facebook} color="secondary">
                 <Facebook id="facebook" sx={{ fontSize: "3rem" }} />
               </Link>
-              <Link href="/https://www.whatsapp.com/" color="secondary">
+              <Link onClick={whatsapp} color="secondary">
                 <WhatsApp id="whatsapp" sx={{ fontSize: "3rem" }} />
               </Link>
-              <Link href="https://www.twitter.com/" color="secondary">
+              <Link onClick={twitter} color="secondary">
                 <Twitter id="twitter" sx={{ fontSize: "3rem" }} />
               </Link>
-              <Link href="https://www.instagram.com/" color="secondary">
+              <Link onClick={instagram} color="secondary">
                 <Instagram id="instagram" sx={{ fontSize: "3rem" }} />
               </Link>
             </div>
